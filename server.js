@@ -1,3 +1,7 @@
+// Root route for Railway health check and browser access
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');

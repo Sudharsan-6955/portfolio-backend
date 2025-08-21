@@ -1,7 +1,3 @@
-// Root route for Railway health check and browser access
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -16,6 +12,11 @@ app.use(express.json());
 app.use('/api/messages', require('./routes/messageRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/admin', require('./routes/imageUploadRoutes'));
+
+// Root route for Railway health check and browser access
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {

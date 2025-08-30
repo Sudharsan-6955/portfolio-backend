@@ -15,7 +15,7 @@ app.use('/api/admin', require('./routes/imageUploadRoutes'));
 
 // Root route for Railway health check and browser access
 app.get('/', (req, res) => {
-  res.send('Backend is running!');
+  res.send('Backend running!');
 });
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
